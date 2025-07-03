@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create a simple S3 bucket with no parameters
+
+Resources:
+  SimpleS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub simple-bucket-${AWS::AccountId}-${AWS::Region}
+      AccessControl: Private
+
+Outputs:
+  BucketName:
+    Value: !Ref SimpleS3Bucket
+    Description: The name of the created S3 bucket
