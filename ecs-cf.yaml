@@ -1,11 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Private ECS Fargate service using Octopus Deploy image tag variable
 
-Parameters:
-  ImageTag:
-    Type: String
-    Description: Docker image tag injected by Octopus (e.g., #{Octopus.Action.Package[MyApp].PackageVersion})
-
 Resources:
 
   VPC:
@@ -64,7 +59,7 @@ Resources:
       ExecutionRoleArn: !GetAtt TaskExecutionRole.Arn
       ContainerDefinitions:
         - Name: app
-          Image: 123456789012.dkr.ecr.us-east-1.amazonaws.com/#{NginxPackageParameter}
+          Image: registry.hub.docker.com/#{NginxPackageParameter}
           PortMappings:
             - ContainerPort: 80
               Protocol: tcp
