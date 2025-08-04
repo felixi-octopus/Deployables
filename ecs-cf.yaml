@@ -59,7 +59,7 @@ Resources:
       ExecutionRoleArn: !GetAtt TaskExecutionRole.Arn
       ContainerDefinitions:
         - Name: app
-          Image: registry.hub.docker.com/#{NginxPackageParameter}
+          Image: registry.hub.docker.com/#{Octopus.Action.Package[NginxPackageParameter].PackageId}
           PortMappings:
             - ContainerPort: 80
               Protocol: tcp
