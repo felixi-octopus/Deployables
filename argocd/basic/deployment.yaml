@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-basic
-  namespace: allsteps-testing
+  namespace: argocd-apps
 spec:
   project: default # Or the name of your Argo CD project
   source:
@@ -11,7 +11,7 @@ spec:
     path: argocd/basic # The path to the manifests within the repository
   destination:
     server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
-    namespace: allsteps-testing # The namespace where you want to deploy the app
+    namespace: argocd-apps # The namespace where you want to deploy the app
   syncPolicy:
     automated:
       prune: true    # Delete resources no longer present in Git
