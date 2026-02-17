@@ -1,0 +1,2 @@
+myValue: "I'm from an external Git repo"
+configMapName: "my-config"
