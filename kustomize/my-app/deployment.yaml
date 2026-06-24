@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image:  #{Octopus.Action.Package[NginxPackageParameter].PackageId}
+          image:  "#{Octopus.Action.Package[NginxPackageParameter].PackageId}"
           ports:
             - containerPort: 80
 
