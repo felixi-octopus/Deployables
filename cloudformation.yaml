@@ -12,3 +12,6 @@ Outputs:
   BucketName:
     Value: !Ref SimpleS3Bucket
     Description: The name of the created S3 bucket
+  OctopusVariable:
+    Value: "#{Octopus.Action.Package[reference].PackageId}"
+    Description: The value of the Octopus reference variable
