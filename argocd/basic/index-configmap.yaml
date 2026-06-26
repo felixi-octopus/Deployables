@@ -8,10 +8,11 @@ data:
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Hello from nginx</title>
+      <title>Hello from #{Octopus.Environment.Name}</title>
     </head>
     <body>
-      <h1>Deployed to Development at Friday, 26 June 2026 3:31:34 PM</h1>
-      <p>Release 0.0.10</p>
+      <h1>Deployed to #{Octopus.Environment.Name} at #{Octopus.Deployment.Created}</h1>
+      <p>Release #{Octopus.Release.Number}</p>
+      <p>Package: #{Octopus.Action.Package[reference].PackageId} v#{Octopus.Action.Package[reference].PackageVersion}</p>
     </body>
     </html>
