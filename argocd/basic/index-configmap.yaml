@@ -8,7 +8,7 @@ data:
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Hello from Development</title>
+      <title>Hello from #{Octopus.Action.Package[nginx].PackageId}</title>
     </head>
     <body>
       <h1>Deployed to Development at Friday, 26 June 2026 3:31:34 PM</h1>
